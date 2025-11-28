@@ -5,7 +5,7 @@
 
 Website TrashUp untuk event **Technoversary 25**.
 
-#Instalasi TrashUp 
+Cara Instalasi TrashUp 
 
 1. **Clone repository**
 bash
