@@ -8,7 +8,11 @@ const Header = () => {
 
   return (
     <header className="fixed w-full top-0 z-50 bg-black/70 backdrop-blur-md flex justify-between items-center py-4 px-4 lg:px-20">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-light m-0">TRASHUP</h1>
+      
+      {/* Logo → bisa diklik */}
+      <a href="#hero" className="text-3xl md:text-4xl lg:text-5xl font-light m-0 hover:text-gray-300 transition">
+        TRASHUP
+      </a>
 
       {/* Desktop Nav */}
       <nav className="hidden md:flex items-center gap-12">
