@@ -89,7 +89,6 @@ const Hero = () => {
         })}
       </div>
 
-      {/* === 3D MODEL === */}
       <div
         className="w-full lg:w-1/2 order-1 lg:order-2 relative"
         style={{ height: heights.model }}
@@ -101,7 +100,6 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 w-full h-24 sm:h-32 md:h-0 lg:hidden bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
       </div>
 
-      {/* === TEXT CONTENT === */}
       <div
         className={`z-10 lg:w-1/2 px-4 sm:px-8 lg:px-0 lg:ml-[7%] flex flex-col justify-center items-start order-2 lg:order-1 ${heights.textMargin}`}
         style={{ height: heights.text }}
@@ -127,14 +125,14 @@ const Hero = () => {
         <div className="flex gap-2 sm:gap-3 flex-wrap">
           <a
             className="border border-[#adadad50] py-1 sm:py-2 px-2 sm:px-4 rounded-full text-xs sm:text-sm md:text-base font-medium tracking-wider transition-all hover:bg-[#191919] hover:border-[#ccc] text-gray-200 backdrop-blur-md"
-            href="#"
+            href="#about"
           >
             Documentation <i className="bx bx-link-external"></i>
           </a>
 
           <a
             className="border border-[#adadad50] py-1 sm:py-2 px-3 sm:px-6 rounded-full text-xs sm:text-sm md:text-base font-semibold tracking-wider transition-all hover:bg-[#242424] bg-gradient-to-r from-[#d9d9d9] to-[#bfbfbf] text-black hover:text-white shadow-[0_0_10px_#ffffff30]"
-            href="#"
+            href="#gallery"
           >
             Get Started <i className="bx bx-link-external"></i>
           </a>
