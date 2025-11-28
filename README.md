@@ -20,3 +20,5 @@ npm install
 
 4. Menjalankan project
 npm start
+
+Untuk tampilannya bisa dilihat pada https://webdesign-gencar123-technoversary25.vercel.app/
