@@ -7,33 +7,34 @@ import Spline from "@splinetool/react-spline";
 
 const trashData = [
   {
-    type: "Plastik • PET 1",
     title: "Botol Plastik PET",
     recycling:
-      "Dihancurkan → dicuci → dilelehkan → dijadikan serat kain atau botol baru.",
-    impact: "Mengurangi sekitar 0.7 kg emisi CO₂ per botol.",
-    product: "Jaket fleece, karpet, botol PET daur ulang.",
-    fact: "PET adalah plastik yang paling mudah didaur ulang dan aman digunakan kembali.",
+      "Botol plastik dikumpulkan, dihancurkan menjadi serpihan kecil, dicuci, lalu dilelehkan untuk dibentuk ulang menjadi produk baru.",
+    impact:
+      "Mengurangi sekitar 0.7 kg emisi CO₂ untuk setiap botol yang berhasil didaur ulang.",
+    product: "Serat kain, botol PET baru, pot tanaman, dan kemasan daur ulang.",
+    fact: "Botol PET adalah jenis plastik yang paling mudah dan paling sering didaur ulang di dunia.",
     spline: "https://prod.spline.design/jjTkXrBBJ6u12K3O/scene.splinecode",
   },
   {
-    type: "Kertas • Corrugated",
     title: "Kardus Bekas",
     recycling:
-      "Direndam → dipisahkan seratnya → dicetak ulang menjadi kardus baru.",
-    impact: "Menghemat 2.3 liter air per satu kardus.",
-    product: "Karton daur ulang, kertas coklat, kemasan baru.",
-    fact: "Kardus bisa didaur ulang hingga 7 kali sebelum seratnya lemah.",
+      "Kardus direndam dalam air hingga menjadi bubur kertas, seratnya dipisahkan, lalu dicetak ulang menjadi kardus baru.",
+    impact:
+      "Setiap 1 kg kardus daur ulang mampu menghemat hingga 2.3 liter air dalam proses produksi.",
+    product: "Kardus baru, kertas coklat, kemasan ramah lingkungan.",
+    fact: "Kardus bisa didaur ulang hingga 7 kali sebelum seratnya melemah.",
     spline: "https://prod.spline.design/fgx4xQDYhnfWnII5/scene.splinecode",
   },
   {
-    type: "Anorganik • Kaca",
-    title: "Kaca Pecah",
+    title: "Dampak Pengurangan Sampah Terhadap Tumbuhan",
     recycling:
-      "Dilelehkan pada suhu tinggi → dibentuk ulang sebagai botol baru.",
-    impact: "Menghemat 30% energi dari pembuatan kaca baru.",
-    product: "Botol baru, dekorasi, material bangunan.",
-    fact: "Kaca dapat didaur ulang tanpa batas tanpa menurunkan kualitas.",
+      "Ketika sampah berkurang, ekosistem tanah menjadi lebih sehat, kadar racun menurun, dan tumbuhan dapat menyerap nutrisi dengan optimal.",
+    impact:
+      "Pengurangan sampah anorganik meningkatkan kualitas tanah hingga 40%, membuat akar tanaman tumbuh lebih kuat dan cepat.",
+    product:
+      "Lahan hijau lebih subur, peningkatan biodiversitas, serta tumbuhan yang tumbuh lebih sehat.",
+    fact: "Penurunan sampah plastik di tanah membantu mikroorganisme berkembang lebih baik, yang secara langsung mempercepat kesuburan tanaman.",
     spline: "https://prod.spline.design/9Gm80JTu09t2WlT4/scene.splinecode",
   },
 ];
@@ -43,14 +44,12 @@ export default function GalleryTrashUp() {
   const [fade, setFade] = useState(false);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
-  // smooth fade text
   useEffect(() => {
     setFade(true);
     const timer = setTimeout(() => setFade(false), 300);
     return () => clearTimeout(timer);
   }, [activeIndex]);
 
-  // mouse particles
   useEffect(() => {
     const handleMouseMove = (e) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", handleMouseMove);
@@ -59,7 +58,6 @@ export default function GalleryTrashUp() {
 
   return (
     <div className="w-full min-h-screen bg-black flex flex-col lg:flex-row p-10 gap-10 pt-32 relative overflow-hidden">
-      
       {/* === PARTICLES BACKGROUND === */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(25)].map((_, i) => {
@@ -91,7 +89,9 @@ export default function GalleryTrashUp() {
                 height: `${size}px`,
                 top: Math.random() * 100 + "%",
                 left: Math.random() * 100 + "%",
-                animation: `floatRandom ${9 + Math.random() * 8}s ease-in-out infinite`,
+                animation: `floatRandom ${
+                  9 + Math.random() * 8
+                }s ease-in-out infinite`,
                 animationDelay: Math.random() * 5 + "s",
               }}
             ></div>
@@ -99,7 +99,6 @@ export default function GalleryTrashUp() {
         })}
       </div>
 
-      {/* Info Panel */}
       <div
         className={`lg:w-1/2 max-h-screen overflow-y-auto px-6 order-2 lg:order-1 transition-opacity duration-500 z-10 ${
           fade ? "opacity-0" : "opacity-100"
@@ -139,13 +138,14 @@ export default function GalleryTrashUp() {
           </div>
 
           <div className="p-4 rounded-xl border border-[#00ff7f30]">
-            <h4 className="text-xl text-[#58ff9c] font-semibold mb-1">Fun Fact</h4>
+            <h4 className="text-xl text-[#58ff9c] font-semibold mb-1">
+              Fun Fact
+            </h4>
             <p className="text-gray-300">{trashData[activeIndex].fact}</p>
           </div>
         </div>
       </div>
 
-      {/* Gallery 3D */}
       <div className="lg:w-1/2 flex items-center justify-center order-1 lg:order-2 z-10">
         <Swiper
           modules={[EffectCoverflow, Mousewheel, Autoplay]}
@@ -177,7 +177,6 @@ export default function GalleryTrashUp() {
         </Swiper>
       </div>
 
-      {/* Particle Animation Styles */}
       <style>{`
         @keyframes floatUp {
           0% { transform: translateY(0) scale(1); opacity: 0.5; }
